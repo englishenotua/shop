@@ -4,9 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCartItemById } from '../../redux/cart/selectors';
 import { CartItem } from '../../redux/cart/types';
 import { addItem } from '../../redux/cart/slice';
-import langData from '';
+import {langue} from '../../langue';
 
-const typeNames = ['тонкє' , 'традиційне'];
+const lang = langue;
+
+const typeNames = [ (lang.tisto1) , (lang.tisto2)];
 
 type PizzaBlockProps = {
   id: string;
@@ -70,7 +72,7 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
                 key={size}
                 onClick={() => setActiveSize(i)}
                 className={activeSize === i ? 'active' : ''}>
-                {size} см.
+                {size} {lang.santimetriv}
               </li>
             ))}
           </ul>
@@ -89,7 +91,7 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
                 fill="white"
               />
             </svg>
-            <span>У Кошик</span>
+            <span>{lang.u_koshik}</span>
             {addedCount > 0 && <i>{addedCount}</i>}
           </button>
         </div>

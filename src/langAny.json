@@ -1,0 +1,51 @@
+{"ukr":
+    {
+        "file1":"src_components_NotFoundBlock_index.tsx",
+
+        "nichogo_ne_znaideno": "Нічого незнайдено",
+        "nashl_dana_storinka_vidsutna_v_nashomu_internet_magazuni": "Нажаль, дана сторінка відсутня в нашому интернет-магазині",
+        "obrajsheniu_smailik": "😕",
+
+
+        "file":"src_components_PizzaBlock_index.tsx",
+
+        "tisto1": "тонкє",
+        "tisto2": "традиційне",
+        "u_koshik": "У Кошик",
+        "santimetriv": "см."
+
+    },
+ "ru":
+    {
+        "file1":"src_components_NotFoundBlock_index.tsx",
+
+        "nichogo_ne_znaideno": "Нічого незнайдено",
+        "nashl_dana_storinka_vidsutna_v_nashomu_internet_magazuni": "К сожалению, эта страница недоступна в нашем интернет-магазине",
+        "obrajsheniu_smailik": "😕",
+
+
+        "file":"src_components_PizzaBlock_index.tsx",
+
+        "tisto1": "тонкое",
+        "tisto2": "традиционное",
+        "u_koshik": "В Корзину",
+        "santimetriv": "см."
+
+    },
+ "eng":
+    {
+        "file1":"src_components_NotFoundBlock_index.tsx",
+        
+        "nichogo_ne_znaideno": "Nothing found",
+        "nashl_dana_storinka_vidsutna_v_nashomu_internet_magazuni": "We are sorry, but this page is not available in our online store",
+        "obrajsheniu_smailik": "😕",
+
+
+        "file":"src_components_PizzaBlock_index.tsx",
+
+        "tisto1": "thin",
+        "tisto2": "traditional",
+        "u_koshik": "Add to cart",
+        "santimetriv": "cm."
+    }
+}
