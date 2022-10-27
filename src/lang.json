@@ -1,0 +1,16 @@
+export const langData = [
+  {
+    //ua
+    tisto_dough1: "тонкє",
+    tisto_dough2: "тонкє",
+  },
+  {
+    //ru
+    tisot_dough1: "тонкое",
+    tisot_dough2: "тонкое",
+  },
+  { //eng
+    tisto_dough1: "thinner",
+    tisto_dough2: "thinner",
+  },
+];

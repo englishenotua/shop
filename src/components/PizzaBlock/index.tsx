@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCartItemById } from '../../redux/cart/selectors';
 import { CartItem } from '../../redux/cart/types';
 import { addItem } from '../../redux/cart/slice';
+import langData from '';
 
-const typeNames = ['тонкє', 'традиційне'];
+const typeNames = ['тонкє' , 'традиційне'];
 
 type PizzaBlockProps = {
   id: string;
