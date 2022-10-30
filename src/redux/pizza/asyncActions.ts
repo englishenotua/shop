@@ -3,13 +3,16 @@ import axios from 'axios';
 import { Pizza, SearchPizzaParams } from './types';
 import pickBy from 'lodash/pickBy';
 import identity from 'lodash/identity';
+import {langue} from '../../langue';
+
+const lang = langue;
 
 export const fetchPizzas = createAsyncThunk<Pizza[], SearchPizzaParams>(
   'pizza/fetchPizzasStatus',
   async (params) => {
     const { sortBy, order, category, search, currentPage } = params;
     console.log(params, 4444);
-    const { data } = await axios.get<Pizza[]>(`https://6356841d9243cf412f86b0f8.mockapi.io/api/v1/piz`, {
+    const { data } = await axios.get<Pizza[]>((lang.pizzas), {
       params: pickBy(
         {
           page: currentPage,

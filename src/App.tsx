@@ -1,6 +1,8 @@
 import Loadable from 'react-loadable';
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import {store} from './redux/store';
 
 import Home from './pages/Home';
 
@@ -17,6 +19,7 @@ const NotFound = React.lazy(() => import(/* webpackChunkName: "NotFound" */ './p
 
 function App() {
   return (
+  <Provider store={store}>
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route path="" element={<Home />} />
@@ -46,7 +49,9 @@ function App() {
         />
       </Route>
     </Routes>
+    </Provider>
   );
+  
 }
 
 export default App;

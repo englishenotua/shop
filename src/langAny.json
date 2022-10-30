@@ -1,5 +1,10 @@
-{"ukr":
+{"ua":
     {
+        "file1":"src_components_redux__pizza_asyncActions.ts",
+        "pizzas": "https://6356841d9243cf412f86b0f8.mockapi.io/api/v1/piz",
+        
+        
+        
         "file1":"src_components_NotFoundBlock_index.tsx",
 
         "nichogo_ne_znaideno": "Нічого незнайдено",
@@ -12,14 +17,21 @@
         "tisto1": "тонкє",
         "tisto2": "традиційне",
         "u_koshik": "У Кошик",
-        "santimetriv": "см."
+        "santimetriv": "см.",
+        "price_vid": "від",
+        "valyuta_cantry": "₴"
 
     },
  "ru":
     {
+        "file1":"src_components_redux__pizza_asyncActions.ts",
+        "pizzas": "https://635b61f5aa7c3f113dbbb838.mockapi.io/api/v2/pizza",
+
+
+
         "file1":"src_components_NotFoundBlock_index.tsx",
 
-        "nichogo_ne_znaideno": "Нічого незнайдено",
+        "nichogo_ne_znaideno": "Ничего не найдено",
         "nashl_dana_storinka_vidsutna_v_nashomu_internet_magazuni": "К сожалению, эта страница недоступна в нашем интернет-магазине",
         "obrajsheniu_smailik": "😕",
 
@@ -29,11 +41,18 @@
         "tisto1": "тонкое",
         "tisto2": "традиционное",
         "u_koshik": "В Корзину",
-        "santimetriv": "см."
-
+        "santimetriv": "см.",
+        "price_vid": "oт",
+        "valyuta_cantry": "₽"
     },
- "eng":
+ "en":
     {
+        "file1":"src_components_redux__pizza_asyncActions.ts",
+        "pizzas": "https://635b66dfaa7c3f113dbc14a0.mockapi.io/api/v3/pizz",
+
+
+
+
         "file1":"src_components_NotFoundBlock_index.tsx",
         
         "nichogo_ne_znaideno": "Nothing found",
@@ -46,6 +65,8 @@
         "tisto1": "thin",
         "tisto2": "traditional",
         "u_koshik": "Add to cart",
-        "santimetriv": "cm."
+        "santimetriv": "cm.",
+        "price_vid": "from",
+        "valyuta_cantry": "$"
     }
 }

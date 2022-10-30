@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Categories, Sort, PizzaBlock, Skeleton, Pagination } from '../components';
 
 import { sortList } from '../components/Sort';
+import MenuLang from '../components/Search';
 
 import { useAppDispatch } from '../redux/store';
 import { selectFilter } from '../redux/filter/selectors';
@@ -13,6 +14,7 @@ import { selectPizzaData } from '../redux/pizza/selectors';
 import { setCategoryId, setCurrentPage, setFilters } from '../redux/filter/slice';
 import { fetchPizzas } from '../redux/pizza/asyncActions';
 import { SearchPizzaParams } from '../redux/pizza/types';
+import { selectLang } from '../redux/lang/selectors';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -20,6 +22,8 @@ const Home: React.FC = () => {
   const isMounted = React.useRef(false);
 
   const { items, status } = useSelector(selectPizzaData);
+  const { lang } = useSelector(selectLang);
+  
   const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
 
   const onChangeCategory = React.useCallback((idx: number) => {
@@ -100,6 +104,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="container">
+      
       <div className="content__top">
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
         <Sort value={sort} />

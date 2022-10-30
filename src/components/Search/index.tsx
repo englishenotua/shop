@@ -1,14 +1,55 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../../hook';
 import debounce from 'lodash.debounce';
-
+import Select from 'react-select';
 import styles from './Search.module.scss';
 import { setSearchValue } from '../../redux/filter/slice';
+import { selectLang} from '../../redux/lang/selectors';
+import {updateValue} from '../../redux/lang/slice';
+import { stringify } from 'qs';
 
-const langueAny = ["UA","EN","RU"];
+
+const langueAny = [{
+    value: 'ua',
+    label: 'UA'
+},{
+    value: 'ru',
+    label: 'RU'
+},{
+    value: 'en',
+    label: 'EN'
+},];
+
+const MenuLang = () =>{
+
+  const [curentLanguage, setCurentLanguage] = useState('ua');
+
+  const dispatch = useAppDispatch();
+
+  const {lang} = useAppSelector(selectLang);
 
 
-export const Search: React.FC = () => {
+  const getValue = () => {
+    return curentLanguage ? langueAny.find(c =>c.value === curentLanguage) : '';
+  };
+
+  const onChange = (newValue:any) => {
+    setCurentLanguage(newValue.value); 
+    dispatch(updateValue(newValue.value));
+  };
+
+
+  return(
+    <div className={styles.languejAny}>
+      <span className={styles.lang}>Оберіть мову: <span id="hooks">{lang}</span></span>
+      <Select onChange={onChange} value={getValue()} options={langueAny} />
+    </div>
+  )
+} 
+
+export const Search: FC = () => {
+
   const dispatch = useDispatch();
   const [value, setValue] = React.useState<string>('');
   const [open, setOpen] = React.useState(false);
@@ -85,14 +126,11 @@ export const Search: React.FC = () => {
           </svg>
         )}
       </div>
-      <span onClick={() => setOpen(!open)}>{value}</span>
-      <div className={styles.languejAny}>
-          <ul>
-            <li>{langueAny[0]}</li>
-            <li>{langueAny[1]}</li>
-            <li>{langueAny[2]}</li>
-          </ul>
-      </div>
-    </>
+      <MenuLang />
+      </>
   );
 };
+
+
+export default MenuLang;
+
