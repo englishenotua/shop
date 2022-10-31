@@ -2,14 +2,12 @@ import React from 'react';
 import styles from './NotFoundBlock.module.scss';
 import {langue} from '../../langue';
 import { useSelector } from 'react-redux';
-import { selectLang } from '../../redux/lang/selectors';
+import { selectLang } from '../../redux/lange/selectors';
 
 const lang = langue;
 
 export const NotFoundBlock: React.FC = () => {
   
-  //const {lang} = useSelector(selectLang);
-  //console.log(lang);
   return (
     <div className={styles.root}>
       <h1>

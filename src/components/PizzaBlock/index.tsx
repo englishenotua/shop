@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCartItemById } from '../../redux/cart/selectors';
 import { CartItem } from '../../redux/cart/types';
 import { addItem } from '../../redux/cart/slice';
-import { selectLang } from '../../redux/lang/selectors';
+import { selectLang } from '../../redux/lange/selectors';
 import {langue} from '../../langue';
 import { useAppSelector } from '../../hook';
 import { type } from '@testing-library/user-event/dist/type';
 
-const langu = langue;
+const lang = langue;
 
-const typeNames = [ (langu.tisto1) , (langu.tisto2)];
+const typeNames = [ (lang.tisto1) , (lang.tisto2)];
 
 type PizzaBlockProps = {
   id: string;
@@ -77,13 +77,13 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
                 key={size}
                 onClick={() => setActiveSize(i)}
                 className={activeSize === i ? 'active' : ''}>
-                {size} {langu.santimetriv}
+                {size} {lang.santimetriv}
               </li>
             ))}
           </ul>
         </div>
         <div className="pizza-block__bottom">
-          <div className="pizza-block__price">{langu.price_vid} {price} {langu.valyuta_cantry} </div>
+          <div className="pizza-block__price">{lang.price_vid} {price} {lang.valyuta_cantry} </div>
           <button onClick={onClickAdd} className="button button--outline button--add">
             <svg
               width="12"
@@ -96,7 +96,7 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
                 fill="white"
               />
             </svg>
-            <span>{langu.u_koshik}</span>
+            <span>{lang.u_koshik}</span>
             {addedCount > 0 && <i>{addedCount}</i>}
           </button>
         </div>

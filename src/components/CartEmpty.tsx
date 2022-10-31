@@ -1,21 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { langue } from '../langue';
 import cartEmptyImg from '../assets/img/empty-cart.png';
+
+const lang = langue;
 
 export const CartEmpty: React.FC = () => (
   <div className="cart cart--empty">
     <h2>
-      Кошик порожній <span>😕</span>
+      {lang.koshik_porojniy}<span>{lang.koshik_smile}</span>
     </h2>
     <p>
-      Скоріш за все, ви щє незамовляли піцу.
+      {lang.skorish_za_vse_vu_je_nezamovulu_pizzu}
       <br />
-      Для того, щоб замовити піцу, перейдіть на головну сторінку.
+      {lang.dlya_togo_shjob_zamovutu_pizzu_pereydit_na_golovnu_storinku}
     </p>
     <img src={cartEmptyImg} alt="Empty cart" />
     <Link to="/" className="button button--black">
-      <span>Повернутися назад</span>
+      <span>{lang.povernutusya_nazad}</span>
     </Link>
   </div>
 );

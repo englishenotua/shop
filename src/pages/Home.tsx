@@ -14,7 +14,7 @@ import { selectPizzaData } from '../redux/pizza/selectors';
 import { setCategoryId, setCurrentPage, setFilters } from '../redux/filter/slice';
 import { fetchPizzas } from '../redux/pizza/asyncActions';
 import { SearchPizzaParams } from '../redux/pizza/types';
-import { selectLang } from '../redux/lang/selectors';
+import { selectLang } from '../redux/lange/selectors';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
   const isMounted = React.useRef(false);
 
   const { items, status } = useSelector(selectPizzaData);
-  const { lang } = useSelector(selectLang);
+  const { lange } = useSelector(selectLang);
   
   const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
 

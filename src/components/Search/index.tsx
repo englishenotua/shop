@@ -5,10 +5,12 @@ import debounce from 'lodash.debounce';
 import Select from 'react-select';
 import styles from './Search.module.scss';
 import { setSearchValue } from '../../redux/filter/slice';
-import { selectLang} from '../../redux/lang/selectors';
-import {updateValue} from '../../redux/lang/slice';
+import { selectLang} from '../../redux/lange/selectors';
+import {updateValue} from '../../redux/lange/slice';
 import { stringify } from 'qs';
+import {langue} from '../../langue';
 
+const lang = langue;
 
 const langueAny = [{
     value: 'ua',
@@ -27,7 +29,7 @@ const MenuLang = () =>{
 
   const dispatch = useAppDispatch();
 
-  const {lang} = useAppSelector(selectLang);
+  const {lange} = useAppSelector(selectLang);
 
 
   const getValue = () => {
@@ -42,7 +44,7 @@ const MenuLang = () =>{
 
   return(
     <div className={styles.languejAny}>
-      <span className={styles.lang}>Оберіть мову: <span id="hooks">{lang}</span></span>
+      <span className={styles.lang}>{lang.oberite_movu}<span id="hooks">{lange}</span></span>
       <Select onChange={onChange} value={getValue()} options={langueAny} />
     </div>
   )
@@ -114,7 +116,7 @@ export const Search: FC = () => {
           value={value}
           onChange={onChangeInput}
           className={styles.input}
-          placeholder="Пошук піци..."
+          placeholder={lang.poshuk_pizzs}
         />
         {value && (
           <svg
